@@ -45,7 +45,7 @@ class Card {
   gethtml() {
     const handDiv = document.createElement("div");
     handDiv.innerText = this.suit;
-    handDiv.classlist.add("hand", this.color);
+    handDiv.classList.add("hand", this.color);
     handDiv.dataset.value = `${this.value} ${this.suit}`;
     return handDiv;
   }
