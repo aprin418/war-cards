@@ -1,4 +1,4 @@
-const suits = ["D", "S", "H", "C"];
+const suits = ["♥", "♠", "♦", "♣"];
 const values = [
   "A",
   "2",
@@ -48,7 +48,7 @@ export class Card {
   }
 
   get color() {
-    return this.suit === "H" || this.suit === "D" ? "red" : "black";
+    return this.suit === "♥" || this.suit === "♦" ? "red" : "black";
   }
   gethtml() {
     const handDiv = document.createElement("div");

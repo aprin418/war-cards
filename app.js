@@ -26,7 +26,7 @@ let aiHand;
 let inRound = false;
 let gameEnd;
 
-document.addEventListener("click", () => {
+document.getElementById("play").addEventListener("click", () => {
   if (gameEnd) {
     startGame();
     return;
@@ -48,8 +48,8 @@ function startGame() {
   playerHand = new Deck(deck.cards.slice(splitDeck, deck.cardsNumber));
 
   // USE LINES BELOW TO TEST WIN/LOSE CONDITIONS. BE SURE TO COMMENT OUT ASSOCIATED VARIABLE ABOVE
-  //   aiHand = new Deck([new Card("H", 2)]);
-  //   playerH = new Deck([new Card("H", 2)]);
+  //   aiHand = new Deck([new Card("♥", 2)]);
+  //   playerHand = new Deck([new Card("♥", 2)]);
 
   console.log(playerHand);
   console.log(aiHand);
@@ -86,23 +86,23 @@ function drawCards() {
   updateCount();
 
   if (roundWinner(playerCard, aiCard)) {
-    text.innerHTML = "Win";
+    text.innerHTML = "You won that round";
     playerHand.push(playerCard);
     playerHand.push(aiCard);
   } else if (roundWinner(aiCard, playerCard)) {
-    text.innerHTML = "Lose";
+    text.innerHTML = "You lose that round";
     aiHand.push(playerCard);
     aiHand.push(aiCard);
   } else {
-    text.innerHTML = "Tie";
+    text.innerHTML = "Round tied";
     aiHand.push(aiCard);
     playerHand.push(playerCard);
   }
   if (gameOver(playerHand)) {
-    text.innerText = "YOU LOSE!";
+    text.innerText = "GAME OVER, YOU LOSE!";
     gameEnd = true;
   } else if (gameOver(aiHand)) {
-    text.innerText = "YOU WIN";
+    text.innerText = "YOU WIN THE GAME!";
     gameEnd = true;
   }
 }
