@@ -15,7 +15,7 @@ const values = [
   "K",
 ];
 
-class Deck {
+export default class Deck {
   constructor(cards = newDeck()) {
     this.cards = cards;
   }
@@ -31,9 +31,17 @@ class Deck {
       this.cards[i] = oldIdx;
     }
   }
+
+  showCard() {
+    return this.cards.shift();
+  }
+
+  push(card) {
+    this.cards.push(card);
+  }
 }
 
-class Card {
+export class Card {
   constructor(suit, value) {
     this.suit = suit;
     this.value = value;
@@ -58,5 +66,3 @@ function newDeck() {
     });
   });
 }
-
-export default Deck;
