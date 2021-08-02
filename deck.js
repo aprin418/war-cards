@@ -1,4 +1,4 @@
-const suits = ["Diamonds", "Spades", "Hearts", "Clubs"];
+const suits = ["D", "S", "H", "C"];
 const values = [
   "A",
   "2",
@@ -40,12 +40,12 @@ class Card {
   }
 
   get color() {
-    return this.suit === "Hearts" || this.suit === "Diamonds" ? "red" : "black";
+    return this.suit === "H" || this.suit === "D" ? "red" : "black";
   }
   gethtml() {
     const handDiv = document.createElement("div");
     handDiv.innerText = this.suit;
-    handDiv.classList.add("hand", this.color);
+    handDiv.classList.add("flippedCard", this.color);
     handDiv.dataset.value = `${this.value} ${this.suit}`;
     return handDiv;
   }
