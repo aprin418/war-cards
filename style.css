@@ -8,10 +8,10 @@ body {
 
 .hand {
   background-image: url("img/CardBack.jpg");
-  background-color: #cccccc;
+  background-color: lightcoral;
   border-radius: 0.5rem;
   height: 15rem;
-  width: 5rem;
+  width: 10rem;
   border: 1px solid black;
   display: flex;
   justify-content: center;
